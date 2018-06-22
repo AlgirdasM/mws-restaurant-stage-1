@@ -1,0 +1,24 @@
+@media screen and (min-width: 500px) {
+	#restaurants-list {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+	#restaurants-list li {
+		grid-template-rows: auto 1fr;
+	}
+	/* Restaurant info content */
+	#restaurant-container {
+		display: grid;
+	}
+
+}
+
+@media screen and (min-width: 1200px) {
+	#maincontent, #restaurant-content {
+	  width: 1200px;
+	  margin: auto;
+	}
+	#breadcrumb {
+		width: calc(1200px - 30px);
+	  	margin: auto;
+	}
+}
