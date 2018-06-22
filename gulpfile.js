@@ -5,8 +5,21 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var eslint = require('gulp-eslint');
 
-// default action
-gulp.task('default', ['lint', 'copy-html', 'copy-js', 'copy-images', 'copy-data', 'styles'], function() {
+// default action, development mode
+gulp.task('default', ['lint'], function() {
+  gulp.watch('./src/js/*.js', ['lint']).on('change', browserSync.reload);
+  gulp.watch('./src/*.html').on('change', browserSync.reload);
+  gulp.watch('./src/css/*.css').on('change', browserSync.reload);
+
+  browserSync.init({
+    server: './src',
+    port: 8000
+  });
+
+});
+
+// make and serve distribution app
+gulp.task('serve', ['lint', 'copy-html', 'copy-js', 'copy-images', 'copy-data', 'styles'], function() {
   gulp.watch('./src/js/*.js', ['lint']).on('change', browserSync.reload);
   gulp.watch('./src/*.html').on('change', browserSync.reload);
   gulp.watch('./src/css/*.css').on('change', browserSync.reload);
