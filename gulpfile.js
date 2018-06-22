@@ -21,11 +21,6 @@ gulp.task('default', ['lint'], function() {
 
 // make and serve distribution app
 gulp.task('serve', ['lint', 'copy-html', 'copy-js', 'copy-images', 'copy-data', 'copy-pwa', 'styles'], function() {
-  gulp.watch('./src/js/*.js', ['lint']).on('change', browserSync.reload);
-  gulp.watch('./src/*.js', ['lint']).on('change', browserSync.reload);
-  gulp.watch('./src/*.html').on('change', browserSync.reload);
-  gulp.watch('./src/css/*.css').on('change', browserSync.reload);
-
   browserSync.init({
     server: './dist',
     port: 8000
