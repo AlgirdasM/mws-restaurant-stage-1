@@ -34,6 +34,11 @@ self.addEventListener('fetch', function(event) {
 			return fetch(event.request).then(function(response) {
 				// if 404, then match with 404 page
 				if (response.status === 404) {
+					// if image 404, then return offline image
+					if (event.request.url.slice(-3) === 'jpg') {
+						return caches.match('img/offline-pic.jpg');
+					}
+					
 					return caches.match('404.html');
 				}
 				// cache it
