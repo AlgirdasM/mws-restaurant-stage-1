@@ -11,7 +11,7 @@
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 10px;
 	}
-	#restaurant-content #map{
+	#restaurant-content #map {
 		height: calc(100% - 20px);
 		padding: 10px;
 	}
@@ -24,12 +24,13 @@
 }
 
 @media screen and (min-width: 1200px) {
-	#maincontent, #restaurant-content {
-	  width: 1200px;
-	  margin: auto;
+	#maincontent,
+	#restaurant-content {
+		width: 1200px;
+		margin: auto;
 	}
 	#breadcrumb {
 		width: calc(1200px - 30px);
-	  	margin: auto;
+		margin: auto;
 	}
 }
