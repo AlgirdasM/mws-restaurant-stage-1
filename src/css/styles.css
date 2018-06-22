@@ -92,13 +92,13 @@ nav h1 a {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #0275d8;
+    color: #01447e;
     text-decoration: none;
 }
 
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
-    color: #01447e;
+    color: #B15F02;
     text-decoration: underline;
 }
 
@@ -170,6 +170,14 @@ nav h1 a {
   font-size: 16px;
   margin: 0;
 }
+
+#restaurants-list .neighborhood {
+  display: grid;
+  align-self: end;
+  padding: 0 0 10px;
+  font-style: italic;
+}
+
 #restaurants-list li a {
   background-color: #B15F02;
   color: #fff;
