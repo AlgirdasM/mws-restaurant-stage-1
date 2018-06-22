@@ -116,10 +116,10 @@ nav h1 a {
 /* ====================== Map ====================== */
 
 
-/*map height calculation - get vh and extract header and filter-section*/
+/*map height calculation - get vh and extract header, filter-section and scroll-down */
 
 #map {
-  height: calc(100vh - 100px - 110px);
+  height: calc(100vh - 100px - 110px - 40px);
   width: 100%;
 }
 
@@ -157,6 +157,14 @@ nav h1 a {
   width: 50%;
 }
 
+/* =================== Scrool down to see list ==================== */
+#scroll-down {
+  padding: 10px 0 0;
+  text-align: center;
+  height: 30px;
+  margin: auto;
+  display: block;
+}
 
 /* ====================== Restaurant Listing ====================== */
 
