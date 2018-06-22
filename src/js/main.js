@@ -100,11 +100,30 @@ updateRestaurants = () => {
 		if (error) { // Got an error!
 			console.error(error);
 		} else {
-			resetRestaurants(restaurants);
-			fillRestaurantsHTML();
+			// handle if no restaurants are filtered
+			if (restaurants.length !== 0) {
+				resetRestaurants(restaurants);
+				fillRestaurantsHTML();
+			} else {
+				resetRestaurants(restaurants);
+				handleNone();
+			}
 		}
 	});
 };
+
+/**
+ * If no restaurants are filtered, show message.
+*/
+handleNone = () => {
+	const ul = document.getElementById('restaurants-list');
+	const li = document.createElement('li');
+	const p = document.createElement('p');
+	p.innerHTML = 'Sorry, no restaurants found...';
+	li.append(p);
+	ul.append(li);
+};
+
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
