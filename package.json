@@ -1,0 +1,25 @@
+{
+  "name": "restaurant-reviews-app",
+  "version": "1.0.0",
+  "description": "Restaurant reviews app for Udacity Google schoolarship",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-eslint": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Algirdas Mazeika",
+  "license": "ISC",
+  "homepage": ""
+}
