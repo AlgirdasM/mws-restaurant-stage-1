@@ -45,7 +45,7 @@ ul {
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
-  align-self: end;
+  align-self: flex-end;
 }
 
 
@@ -194,7 +194,7 @@ nav h1 a {
 
 #restaurants-list .neighborhood {
   display: grid;
-  align-self: end;
+  align-self: flex-end;
   padding: 0 0 10px;
   font-style: italic;
 }
