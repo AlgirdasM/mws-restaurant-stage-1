@@ -31,12 +31,16 @@ fetchRestaurantFromURL = (callback) => {
 	const id = getParameterByName('id');
 	if (!id) { // no id found in URL
 		error = 'No restaurant id in URL';
+		// if no id show 404 page
+		window.location.href = './404.html';
 		callback(error, null);
 	} else {
 		DBHelper.fetchRestaurantById(id, (error, restaurant) => {
 			self.restaurant = restaurant;
 			if (!restaurant) {
-				console.error(error);
+				// if restaurant not found show 404 page
+				window.location.href = './404.html';
+				//console.error(error);
 				return;
 			}
 			fillRestaurantHTML();

@@ -46,6 +46,7 @@ ul {
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  align-self: end;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -274,4 +275,15 @@ nav h1 a {
 }
 #reviews-list li p {
   margin: 0 0 10px;
+}
+
+/* ====================== 404 page ====================== */
+#lostContent {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+#lostContent a {
+  color: #000;
 }
