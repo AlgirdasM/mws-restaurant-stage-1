@@ -10,7 +10,8 @@ html {
 img,
 embed,
 object,
-video {
+video,
+figure {
     margin: 0;
     max-width: 100%;
 }
@@ -209,7 +210,7 @@ nav h1 a {
   text-transform: uppercase;
   margin: 10px;
 }
-#restaurant-img {
+#restaurant-container .restaurant-img {
   overflow: auto;
   border-radius: 20px 0 20px 0;
 }
@@ -240,9 +241,6 @@ nav h1 a {
   color: #666;
 }
 
-#reviews-container {
-
-}
 #reviews-container {
 
 }

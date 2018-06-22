@@ -49,18 +49,48 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
-	const name = document.getElementById('restaurant-name');
-	name.innerHTML = restaurant.name;
+	document.title = `Restaurant ${restaurant.name} Info`;
 
-	const address = document.getElementById('restaurant-address');
-	address.innerHTML = restaurant.address;
+	const restaurantContainer = document.getElementById('restaurant-container');
 
-	const image = document.getElementById('restaurant-img');
+	// create figure
+	const figure = document.createElement('figure');
+	const figcaption = document.createElement('figcaption')
+	// add heading
+	const heading = document.createElement('h1');
+	heading.id = 'restaurant-name';
+	heading.innerHTML = restaurant.name;
+	figcaption.append(heading)
+	figure.append(figcaption);
+
+	// add picture
+	const image = document.createElement('img');
+	const imgname = DBHelper.imageUrlForRestaurant(restaurant);
 	image.className = 'restaurant-img';
-	image.src = DBHelper.imageUrlForRestaurant(restaurant);
+	image.setAttribute('alt', restaurant.name);
+	image.src = imgname;
+	figure.append(image);
 
-	const cuisine = document.getElementById('restaurant-cuisine');
+	// append figure with figcaption to restaurantContainer
+	restaurantContainer.append(figure);
+
+	// create restaurant data section
+	const section = document.createElement('section');
+	section.id = 'restaurant-data';
+
+	// add cuisine
+	const cuisine = document.createElement('p');
+	cuisine.id = 'restaurant-cuisine';
 	cuisine.innerHTML = restaurant.cuisine_type;
+	section.append(cuisine);
+
+	// add address
+	const address = document.createElement('p');
+	address.id = 'restaurant-address';
+	address.innerHTML = restaurant.address;
+	section.append(address);
+
+	restaurantContainer.append(section);
 
 	// fill operating hours
 	if (restaurant.operating_hours) {
@@ -74,7 +104,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
-	const hours = document.getElementById('restaurant-hours');
+	const restaurantData = document.getElementById('restaurant-data');
+	const hours = document.createElement('table');
+	hours.id = 'restaurant-hours';
+
 	for (let key in operatingHours) {
 		const row = document.createElement('tr');
 
@@ -88,6 +121,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
 		hours.appendChild(row);
 	}
+
+	restaurantData.append(hours);
 };
 
 /**
