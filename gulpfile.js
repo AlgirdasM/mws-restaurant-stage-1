@@ -8,6 +8,7 @@ var eslint = require('gulp-eslint');
 // default action, development mode
 gulp.task('default', ['lint'], function() {
   gulp.watch('./src/js/*.js', ['lint']).on('change', browserSync.reload);
+  gulp.watch('./src/*.js', ['lint']).on('change', browserSync.reload);
   gulp.watch('./src/*.html').on('change', browserSync.reload);
   gulp.watch('./src/css/*.css').on('change', browserSync.reload);
 
@@ -19,8 +20,9 @@ gulp.task('default', ['lint'], function() {
 });
 
 // make and serve distribution app
-gulp.task('serve', ['lint', 'copy-html', 'copy-js', 'copy-images', 'copy-data', 'styles'], function() {
+gulp.task('serve', ['lint', 'copy-html', 'copy-js', 'copy-images', 'copy-data', 'copy-pwa', 'styles'], function() {
   gulp.watch('./src/js/*.js', ['lint']).on('change', browserSync.reload);
+  gulp.watch('./src/*.js', ['lint']).on('change', browserSync.reload);
   gulp.watch('./src/*.html').on('change', browserSync.reload);
   gulp.watch('./src/css/*.css').on('change', browserSync.reload);
 
@@ -66,6 +68,12 @@ gulp.task('copy-images', function() {
 gulp.task('copy-data', function() {
   gulp.src('./src/data/*')
     .pipe(gulp.dest('./dist/data'));
+});
+
+// Copy service worker and other pwa
+gulp.task('copy-pwa', function() {
+  gulp.src('./src/sw.js')
+    .pipe(gulp.dest('./dist'));
 });
 
 // Copy css and add prefixes
