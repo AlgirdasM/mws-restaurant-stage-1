@@ -55,12 +55,12 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
 	// create figure
 	const figure = document.createElement('figure');
-	const figcaption = document.createElement('figcaption')
+	const figcaption = document.createElement('figcaption');
 	// add heading
 	const heading = document.createElement('h1');
 	heading.id = 'restaurant-name';
 	heading.innerHTML = restaurant.name;
-	figcaption.append(heading)
+	figcaption.append(heading);
 	figure.append(figcaption);
 
 	// add picture
