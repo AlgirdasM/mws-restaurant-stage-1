@@ -12,6 +12,9 @@ To install project
 ## Run project
 1. Run `gulp serve` and it will open browser and serve app from dist folder.
 
+## Visit project online
+[Click here to visit project online](https://amfullstack.com/rra/)
+
 ## Optional - Generate new images
 You can add new images to /img-original and generate 800px and 400px files with striped metadata and optimized quality settings.
 1. Run `gulp responsive-img` to generate new images.
