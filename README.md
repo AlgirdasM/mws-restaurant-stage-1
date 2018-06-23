@@ -12,6 +12,10 @@ To install project
 ## Run project
 1. Run `gulp serve` and it will open browser and serve app from dist folder.
 
+## Optional - Generate new images
+You can add new images to /img-original and generate 800px and 400px files with striped metadata and optimized quality settings.
+1. Run `responsive-img` to generate new images.
+Images will be copied to /src/img
 
 ## Licenses and huge thank you
 * [Udacity Front-End Web Developer Nanodegree Program](https://udacity.com/course/front-end-web-developer-nanodegree--nd001)

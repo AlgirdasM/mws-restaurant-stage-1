@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var eslint = require('gulp-eslint');
+var responsive = require('gulp-responsive');
 
 // default action, development mode
 gulp.task('default', ['lint'], function() {
@@ -79,4 +80,28 @@ gulp.task('styles', function() {
     }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream());
+});
+
+// generate smaller images
+gulp.task('responsive-img', function() {
+  return gulp.src('img-original/*.jpg')
+    .pipe(responsive({
+      // Resize all JPG images to four different sizes: 235, 370, 470 and 570 pixels
+      '*.jpg': [{
+        width: 400,
+        rename: { suffix: '-small' },
+      },
+      {
+        width: 800
+      }],
+    }, {
+      // Global configuration for all images
+      // The output quality for JPEG, WebP and TIFF output formats
+      quality: 60,
+      // Use progressive (interlace) scan for JPEG and PNG output
+      progressive: true,
+      // Strip all metadata
+      withMetadata: false,
+    }))
+    .pipe(gulp.dest('src/img'));
 });

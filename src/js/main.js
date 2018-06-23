@@ -159,19 +159,28 @@ createRestaurantHTML = (restaurant) => {
 
 	// create figure
 	const figure = document.createElement('figure');
-	// create image
+	// create image, picture semantics
+	const picture = document.createElement('picture');
 	const image = document.createElement('img');
+	// responsive images
+	const sourceElement = document.createElement('source');
+	sourceElement.setAttribute('media', '(min-width: 800px)');
+	sourceElement.setAttribute('srcset', `${DBHelper.imageUrlForRestaurant(restaurant).slice(0,-4)}-small.jpg`);
+	picture.append(sourceElement);
+
 	image.className = 'restaurant-img';
 	image.src = DBHelper.imageUrlForRestaurant(restaurant);
 	image.setAttribute('alt', restaurant.name);
-	li.append(image);
+
+	picture.append(image);
+
 	// create figcaption
 	const figcaption = document.createElement('figcaption');
 	const name = document.createElement('h1');
 	name.innerHTML = restaurant.name;
 	figcaption.append(name);
-	// append image and figcapture to figure
-	figure.append(image);
+	// append image with picture semantics and figcapture to figure
+	figure.append(picture);
 	figure.append(figcaption);
 
 	li.append(figure);

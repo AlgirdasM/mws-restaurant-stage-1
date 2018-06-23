@@ -61,13 +61,21 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 	const figure = document.createElement('figure');
 	const figcaption = document.createElement('figcaption');
 
-	// add picture
+	// create picture
+	const picture = document.createElement('picture');
+	// responsive images
+	const sourceElement = document.createElement('source');
+	sourceElement.setAttribute('media', '(max-width: 800px)');
+	sourceElement.setAttribute('srcset', `${DBHelper.imageUrlForRestaurant(restaurant).slice(0,-4)}-small.jpg`);
+	picture.append(sourceElement);
+	// create image and add it to picture semantics
 	const image = document.createElement('img');
 	const imgname = DBHelper.imageUrlForRestaurant(restaurant);
 	image.className = 'restaurant-img';
 	image.setAttribute('alt', restaurant.name);
 	image.src = imgname;
-	figure.append(image);
+	picture.append(image);
+	figure.append(picture);
 
 	// add heading
 	const heading = document.createElement('h1');
