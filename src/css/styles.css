@@ -92,7 +92,7 @@ nav h1 a {
 
 #breadcrumb li+li:before {
   padding: 8px;
-  color: black;
+  color: #000;
   content: "/\00a0";
 }
 
@@ -281,13 +281,16 @@ nav h1 a {
   color: #666;
 }
 
-#reviews-container {}
+#reviews-container {
+  margin: 20px 0 0;
+  border-top: 1px solid #999;
+}
 
 #reviews-container h2 {
   color: #B15F02;
   text-align: center;
-  font-size: 24pt;
-  font-weight: 300;
+  font-size: 36px;
+  font-weight: 500;
   padding-bottom: 1pt;
 }
 
@@ -338,8 +341,6 @@ nav h1 a {
   background-color: #B15F02;
   text-align: center;
   font-weight: 100;
-  
-  
 }
 
 
