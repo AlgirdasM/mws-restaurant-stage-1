@@ -305,7 +305,7 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 20px;
   border-radius: 20px 0 20px 0;
-  
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
 }
 
 #reviews-list li p {
