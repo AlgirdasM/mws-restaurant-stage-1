@@ -302,11 +302,44 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 20px;
   border-radius: 20px 0 20px 0;
-  padding: 20px;
+  
 }
 
 #reviews-list li p {
   margin: 0 0 10px;
+}
+
+#reviews-list .commentHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #252831;
+  border-radius: 20px 0 0 0;
+  padding: 15px;
+}
+#reviews-list .commentHeader p {
+  color: #fff;
+  margin: 0;
+}
+#reviews-list .commentDate {
+  text-align: right;
+  color: #666;
+  font-weight: 100;
+}
+#reviews-list .comment {
+  padding: 0 15px;
+  text-align: justify;
+}
+#reviews-list .rating {
+  width: 70px;
+  padding: 10px;
+  margin: 15px 15px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #B15F02;
+  text-align: center;
+  font-weight: 100;
+  
+  
 }
 
 
