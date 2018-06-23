@@ -72,8 +72,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 	const image = document.createElement('img');
 	const imgname = DBHelper.imageUrlForRestaurant(restaurant);
 	image.className = 'restaurant-img';
-	image.setAttribute('alt', restaurant.name);
+	image.setAttribute('alt', `Restaurant ${restaurant.name} picture`);
 	image.src = imgname;
+	image.setAttribute('tabindex', 0);
 	picture.append(image);
 	figure.append(picture);
 
@@ -81,6 +82,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 	const heading = document.createElement('h2');
 	heading.id = 'restaurant-name';
 	heading.innerHTML = restaurant.name;
+	heading.setAttribute('tabindex', 0);
 	figcaption.append(heading);
 	figure.append(figcaption);
 
@@ -95,12 +97,14 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 	const cuisine = document.createElement('p');
 	cuisine.id = 'restaurant-cuisine';
 	cuisine.innerHTML = restaurant.cuisine_type;
+	cuisine.setAttribute('tabindex', 0);
 	section.append(cuisine);
 
 	// add address
 	const address = document.createElement('p');
 	address.id = 'restaurant-address';
 	address.innerHTML = restaurant.address;
+	address.setAttribute('tabindex', 0);
 	section.append(address);
 
 	restaurantContainer.append(section);
@@ -119,6 +123,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
 	const restaurantData = document.getElementById('restaurant-data');
 	const hours = document.createElement('table');
+	hours.setAttribute('tabindex', 0);
+	hours.setAttribute('aria-label', 'Working hours');
 	hours.id = 'restaurant-hours';
 
 	for (let key in operatingHours) {
@@ -126,10 +132,12 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
 		const day = document.createElement('td');
 		day.innerHTML = key;
+		day.setAttribute('tabindex', 0);
 		row.appendChild(day);
 
 		const time = document.createElement('td');
 		time.innerHTML = operatingHours[key];
+		time.setAttribute('tabindex', 0);
 		row.appendChild(time);
 
 		hours.appendChild(row);
@@ -145,11 +153,13 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 	const container = document.getElementById('reviews-container');
 	const title = document.createElement('h3');
 	title.innerHTML = 'Reviews';
+	title.setAttribute('tabindex', 0);
 	container.appendChild(title);
 
 	if (!reviews) {
 		const noReviews = document.createElement('p');
 		noReviews.innerHTML = 'No reviews yet!';
+		noReviews.setAttribute('tabindex', 0);
 		container.appendChild(noReviews);
 		return;
 	}
@@ -171,11 +181,13 @@ createReviewHTML = (review) => {
 
 	const name = document.createElement('p');
 	name.innerHTML = review.name;
+	name.setAttribute('tabindex', 0);
 	commentHeader.appendChild(name);
 
 	const date = document.createElement('p');
 	date.innerHTML = review.date;
 	date.className = 'commentDate';
+	date.setAttribute('tabindex', 0);
 	commentHeader.appendChild(date);
 
 	li.appendChild(commentHeader);
@@ -183,11 +195,13 @@ createReviewHTML = (review) => {
 	const rating = document.createElement('p');
 	rating.innerHTML = `Rating: ${review.rating}`;
 	rating.className = 'rating';
+	rating.setAttribute('tabindex', 0);
 	li.appendChild(rating);
 
 	const comments = document.createElement('p');
 	comments.innerHTML = review.comments;
 	comments.className = 'comment';
+	comments.setAttribute('tabindex', 0);
 	li.appendChild(comments);
 
 	return li;
