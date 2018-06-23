@@ -14,8 +14,12 @@ To install project
 
 ## Optional - Generate new images
 You can add new images to /img-original and generate 800px and 400px files with striped metadata and optimized quality settings.
-1. Run `responsive-img` to generate new images.
+1. Run `gulp responsive-img` to generate new images.
 Images will be copied to /src/img
+
+## Optional - make new distribution version
+You can generate new distribution version.
+1. Run `gulp make` to generate new distribution version.
 
 ## Licenses and huge thank you
 * [Udacity Front-End Web Developer Nanodegree Program](https://udacity.com/course/front-end-web-developer-nanodegree--nd001)
