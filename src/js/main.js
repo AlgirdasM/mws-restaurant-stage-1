@@ -176,7 +176,7 @@ createRestaurantHTML = (restaurant) => {
 
 	// create figcaption
 	const figcaption = document.createElement('figcaption');
-	const name = document.createElement('h1');
+	const name = document.createElement('h3');
 	name.innerHTML = restaurant.name;
 	figcaption.append(name);
 	// append image with picture semantics and figcapture to figure

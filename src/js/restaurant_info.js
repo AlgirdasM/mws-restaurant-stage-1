@@ -78,7 +78,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 	figure.append(picture);
 
 	// add heading
-	const heading = document.createElement('h1');
+	const heading = document.createElement('h2');
 	heading.id = 'restaurant-name';
 	heading.innerHTML = restaurant.name;
 	figcaption.append(heading);
@@ -143,7 +143,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 	const container = document.getElementById('reviews-container');
-	const title = document.createElement('h2');
+	const title = document.createElement('h3');
 	title.innerHTML = 'Reviews';
 	container.appendChild(title);
 

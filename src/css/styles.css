@@ -186,7 +186,7 @@ nav h1 a {
   border-radius: 20px 0 20px 0;
 }
 
-#restaurants-list li h1 {
+#restaurants-list li h3 {
   color: #B15F02;
   font-weight: 500;
   font-size: 36px;
@@ -234,8 +234,6 @@ nav h1 a {
   padding: 10px;
   height: 30vh;
 }
-
-#restaurant-container {}
 
 #restaurant-name {
   text-align: center;
@@ -286,7 +284,7 @@ nav h1 a {
   border-top: 1px solid #999;
 }
 
-#reviews-container h2 {
+#reviews-container h3 {
   color: #B15F02;
   text-align: center;
   font-size: 36px;
