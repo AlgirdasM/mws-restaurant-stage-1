@@ -1,4 +1,4 @@
-const staticCacheName = 'rr-static-v3';
+const staticCacheName = 'rr-static-v1';
 
 self.addEventListener('install', function(event) {
 	const urlsToCache = [
