@@ -8,12 +8,13 @@ To install project
 1. Clone or download repository
 2. cd to it's folder
 3. Run `npm install`
+4. Add Google maps API key to index.html and restaurant.html
 
 ## Run project
 1. Run `gulp serve` and it will open browser and serve app from dist folder.
 
 ## Visit project online
-[Click here to visit project online](https://amfullstack.com/rra/)
+[Click here to visit project online](https://rra.amfullstack.com/)
 
 ## Optional - Generate new images
 You can add new images to /img-original and generate 800px and 400px files with striped metadata and optimized quality settings.
