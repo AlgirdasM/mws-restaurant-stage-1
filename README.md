@@ -8,7 +8,7 @@ To install project
 1. Clone or download repository
 2. cd to it's folder
 3. Run `npm install`
-4. Add Google maps API key to index.html and restaurant.html
+4. Add Google maps API key to ./src/index.html and ./src/restaurant.html
 
 ## Run project
 1. Run `gulp serve` and it will open browser and serve app from dist folder.
